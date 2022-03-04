@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if not next %}
+    {% url 'films:all' as next %}
+{% endif %}
+
+<div class="container">
+    {% if form.errors %}
+        <div class="alert alert-danger mt-5 text-center" role="alert">
+            Your username and password didn't match. Please try again.
+        </div>
+    {% endif %}
+
+    <form class="mt-5" method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <h1 class="text-center my-5">Login Page</h1>
+        <div class="d-flex justify-content-center mb-3">
+            <table class="table table-borderless" style="width: 10%;">
+                <thead>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="h4">{{form.username.label}}:</td>
+                        <td>{{form.username}}</td>
+                    </tr>
+                    <tr>
+                        <td class="h4">{{form.password.label}}:</td>
+                        <td>{{form.password}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        {% comment %} {{ form.as_p }} {% endcomment %}
+        <div class="d-flex justify-content-center">
+            <input type="submit" class="btn btn-primary btn-lg" value="Login" />
+        </div>
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+
+</div>
+{% endblock %}

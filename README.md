@@ -52,7 +52,7 @@ I'm putting together this present repository so that it can be used as starter c
 
 10. Run `python manage.py makemigrations` and `python manage.py migrate` to create the necessary tables in the database; 
 
-*OBS*: If there is any special character in your secret key that is raising errors when Django commands are run, replace this character by any letter or number.
+> *OBS*: If there is any special character in your secret key that is raising errors when Django commands are run, replace this character by any letter or number.
 
 11. Create a superuser, so that you can use it to login in the restricted areas. Insert the necessary information (username, email and password) when asked.
 
@@ -80,7 +80,7 @@ I'm putting together this present repository so that it can be used as starter c
 
 <br />
 
-4. When trying to acess the pages where films are crated, updated and deleted, if your user is not currently logged in, you will be redirected to the app login page. Provide the information from the superuser you created earlier so that you can login. The app will allow all users registered in the `django.contrib.auth.models.User` table to log in using their information.
+4. When trying to access the pages where films are created, updated and deleted, if your user is not currently logged in, you will be redirected to the app login page. Provide the information from the superuser you created earlier so that you can log in. The app will allow all users registered in the `django.contrib.auth.models.User` table to log in using their information.
 
 ## Licence
 <br />
